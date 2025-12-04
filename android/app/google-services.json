@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "604444244306",
+    "project_id": "es-mambo-lasmi",
+    "storage_bucket": "es-mambo-lasmi.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:604444244306:android:1d54129fc2ae08e17ae28b",
+        "android_client_info": {
+          "package_name": "com.example.esmambolasmi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYO0gIbmqcu5YyP_jEXh0gv6P32HGAQzA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

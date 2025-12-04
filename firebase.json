@@ -1,0 +1,39 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "es-mambo-lasmi",
+          "appId": "1:604444244306:android:1d54129fc2ae08e17ae28b",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "es-mambo-lasmi",
+          "configurations": {
+            "android": "1:604444244306:android:1d54129fc2ae08e17ae28b",
+            "ios": "1:604444244306:ios:cbc7ea9d8b4e8bf67ae28b",
+            "macos": "1:604444244306:ios:cbc7ea9d8b4e8bf67ae28b",
+            "web": "1:604444244306:web:44fc871a0643f9bc7ae28b",
+            "windows": "1:604444244306:web:8c2ac3a3d48c9f8d7ae28b"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "y",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
