@@ -9,19 +9,23 @@ class DrawerMenu extends StatefulWidget {
 }
 
 class _DrawerMenuState extends State<DrawerMenu> {
+  String selectedMenu = "";
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
     return Drawer(
-      backgroundColor: theme.appBarTheme.backgroundColor,
+      // backgroundColor: theme.appBarTheme.backgroundColor,
+      backgroundColor: Colors.white,
       child: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             // HEADER
             DrawerHeader(
-              decoration: const BoxDecoration(color: Colors.transparent),
+              decoration: BoxDecoration(
+                color: theme.appBarTheme.backgroundColor,
+              ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -39,18 +43,35 @@ class _DrawerMenuState extends State<DrawerMenu> {
                 ],
               ),
             ),
-            const Divider(color: Colors.white, indent: 16, endIndent: 16),
+            const Divider(color: Colors.black, indent: 16, endIndent: 16),
             // Menu
             drawerItem(context, "Home", Icons.home_outlined),
             drawerItem(context, "Produk", Icons.local_mall_outlined),
             drawerItem(context, "Kontak", Icons.call_outlined),
+            // === INFORMASI TENTANG ===
+            if (selectedMenu == "Kontak")
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Text(
+                  "Hub: 0885693665006",
+                  style: const TextStyle(color: Colors.black),
+                  textAlign: TextAlign.center,
+                ),
+              ),
             drawerItem(context, "Tentang", Icons.info_outline),
-
+            // === INFORMASI TENTANG ===
+            if (selectedMenu == "Tentang")
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Text(
+                  "✨ Es Mambo Aneka Rasa – Segar, Nikmat, dan Bikin Nostalgia! ✨ Dibuat dari bahan pilihan dengan cita rasa manis, segar, dan lembut di mulut, cocok dinikmati semua kalangan.",
+                  style: const TextStyle(color: Colors.black),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            const Divider(color: Colors.black, indent: 16, endIndent: 16),
             const Spacer(),
-
-            const Divider(color: Colors.white),
-            themeSwitcher(),
-            const SizedBox(height: 10),
+            themeSwitcher(context),
           ],
         ),
       ),
@@ -59,10 +80,13 @@ class _DrawerMenuState extends State<DrawerMenu> {
 
   Widget drawerItem(BuildContext context, String title, IconData icon) {
     return ListTile(
-      leading: Icon(icon, color: Colors.white),
-      title: Text(title, style: const TextStyle(color: Colors.white)),
+      leading: Icon(icon, color: Colors.black),
+      title: Text(title, style: const TextStyle(color: Colors.black)),
       onTap: () {
-        Navigator.pop(context); // tutup drawer
+        setState(() {
+          selectedMenu = title;
+        });
+        // Navigator.pop(context); // tutup drawer
       },
     );
   }

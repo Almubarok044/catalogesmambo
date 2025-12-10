@@ -18,9 +18,13 @@ class AppThemeState extends ChangeNotifier {
 }
 
 // ===== THEME SWITCHER (SUN - SWITCH - MOON) =====
-Widget themeSwitcher() {
-  return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 18),
+Widget themeSwitcher(BuildContext context) {
+  final theme = Theme.of(context);
+
+  return Container(
+    width: double.infinity,
+    padding: const EdgeInsets.all(16),
+    color: theme.appBarTheme.backgroundColor,
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -41,7 +45,7 @@ Widget themeSwitcher() {
         const SizedBox(width: 6),
         DarkModeSwitch(),
         const SizedBox(width: 6),
-        const Icon(Icons.nights_stay_outlined, size: 22, color: Colors.black38),
+        const Icon(Icons.nights_stay_outlined, size: 22, color: Colors.black54),
       ],
     ),
   );
